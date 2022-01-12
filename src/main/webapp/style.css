@@ -1,0 +1,76 @@
+/* CUSTOM PROPS */
+:root {
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+
+  --bs-old: 0.25em 0 0.75em rgba(0,0,0,0.25),
+        0.125em 0 0.25em rgba(0, 0, 0, 0.15);
+
+  --bs-hover: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  --bs-hover-text: 1px 1px .15em rgba(0, 0, 0, 0.25);
+
+
+  --clr-pri: rgb(208, 231, 255);
+  --clr-sec: rgb(133, 155, 177);
+  --clr-acc: rgb(25, 59, 94);
+
+  --fc-light: rgb(240, 240, 240);
+  --fc-dark: rgb(10, 10, 10);
+
+  
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--clr-pri);
+  color: var(--fc-dark);
+  font-family: sans-serif;
+}
+
+.nav__section {
+	height: 100px;
+	background: var(--clr-sec);
+	display: flex;
+	flex-direction: row;
+  font-size: var(--fs-h2);
+  box-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,0.25);
+}
+
+.nav__item {
+	width: 200px;
+	height: 100%;
+  text-align: center;
+  line-height: 100px;
+}
+
+.nav__link {
+	text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--fc-light);
+}
+
+.nav__link:hover {
+  box-shadow: var(--bs-hover);
+  text-shadow: var(--bs-hover-text);
+}
+
+.nav__link--home {
+  text-align: left;
+  justify-content: left;
+  line-height: normal;
+}
+
+.nav__link--logo {
+	height: 90px;
+  margin: 5px;
+  align-self: center;
+}
