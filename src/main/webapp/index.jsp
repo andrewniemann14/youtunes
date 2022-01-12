@@ -7,6 +7,7 @@
 <title>YouTunes Home</title>
 </head>
 <body>
+	<jsp:include page="TopNav.jsp" />
 
 </body>
 </html>

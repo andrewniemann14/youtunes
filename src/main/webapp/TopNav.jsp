@@ -1,12 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<!-- header, included on all pages -->
 
-</body>
-</html>
+<%@page language="java" contentType="text/html"%>
+
+
+<div class="header">
+  <div class="logo">
+  	<a href="/youtunes">
+  		<img src="/yt-logo.svg" border="0"/>
+  		<p>YouTunes</p>
+  	</a>
+
+  </div>
+  </div>
