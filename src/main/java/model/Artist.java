@@ -1,4 +1,4 @@
-package youtunes;
+package model;
 
 public class Artist {
 
