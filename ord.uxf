@@ -1,0 +1,13 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>240</x><y>180</y><w>100</w><h>70</h></coordinates><panel_attributes>Artist
+--
+artist_id
+name</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>180</y><w>100</w><h>130</h></coordinates><panel_attributes>Album
+--
+album_id
+title
+price
+genre
+img_url
+artist_id</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>200</y><w>160</w><h>40</h></coordinates><panel_attributes>lt=-
+m1=1.1
+m2=1.*</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element></diagram>

@@ -67,15 +67,38 @@ body {
   text-align: left;
   justify-content: left;
   line-height: normal;
+  color: var(--clr-acc);
+  color: red;
 }
 
 .nav__link--logo {
-	height: 90px;
+  height: 90px;
   margin: 5px;
   align-self: center;
 }
 
 
+
+
+.landing__section {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+.footer {
+	width: 100vw;
+	bottom: 0;
+	position: fixed;
+	text-align: right;
+	padding: 0;
+	margin: 0;
+}
 
 
 
