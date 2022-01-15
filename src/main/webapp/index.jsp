@@ -5,10 +5,10 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>YouTunes Home</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<jsp:include page="TopNav.jsp" />
+	<jsp:include page="jsp/TopNav.jsp" />
 
 
 	<div class="landing__section">
@@ -26,7 +26,7 @@
 
 
 
-	<jsp:include page="Footer.jsp" />
-	<jsp:include page="ScriptFooter.jsp" />
+	<jsp:include page="jsp/Footer.jsp" />
+	<jsp:include page="jsp/ScriptFooter.jsp" />
 </body>
 </html>

@@ -68,7 +68,6 @@ body {
   justify-content: left;
   line-height: normal;
   color: var(--clr-acc);
-  color: red;
 }
 
 .nav__link--logo {
