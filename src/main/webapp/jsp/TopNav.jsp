@@ -12,7 +12,7 @@
     </div>
   
     <div class="nav__item">
-      <a href="/youtunes/artists/List.jsp" class="nav__link">Artists</a>
+      <a href="/youtunes/jsp/artists/List.jsp" class="nav__link">Artists</a>
     </div>
   
     <div class="nav__item">

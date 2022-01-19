@@ -1,22 +1,26 @@
 package model;
 
 public class Artist {
-	private int id;
+	private Long id;
 	private String name;
 	
 //	constructors
-	public Artist(int id, String name) {
+	public Artist() {
+		
+	}
+	
+	public Artist(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
 	
 
 //	getters and setters
-	public void setID(int id) {
+	public void setID(Long id) {
 		this.id = id;
 	}
 	
-	public int getID() {
+	public Long getID() {
 		return id;
 	}
 	public void setName(String name) {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<jsp:include page="jsp/TopNav.jsp" />
+	<jsp:include page="TopNav.jsp" />
 
 
 	<div class="landing__section">
@@ -26,7 +27,7 @@
 
 
 
-	<jsp:include page="jsp/Footer.jsp" />
-	<jsp:include page="jsp/ScriptFooter.jsp" />
+	<jsp:include page="Footer.jsp" />
+	<jsp:include page="ScriptFooter.jsp" />
 </body>
 </html>
