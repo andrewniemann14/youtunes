@@ -12,15 +12,15 @@
     </div>
   
     <div class="nav__item">
-      <a href="/youtunes/jsp/artists/List.jsp" class="nav__link">Artists</a>
+      <a href="store?action=showArtists" class="nav__link">Artists</a>
     </div>
   
     <div class="nav__item">
-      <a href="/youtunes/About.jsp" class="nav__link">About Us</a>
+      <a href="store?action=showAboutUs" class="nav__link">About Us</a>
     </div>
   
     <div class="nav__item">
-      <a href="/youtunes/Contact.jsp" class="nav__link">Contact</a>
+      <a href="store?action=showContactUs" class="nav__link">Contact</a>
     </div>
   
   </div>

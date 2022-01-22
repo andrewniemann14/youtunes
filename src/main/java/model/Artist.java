@@ -6,7 +6,10 @@ public class Artist {
 	
 //	constructors
 	public Artist() {
-		
+	}
+	
+	public Artist(String name) {
+		this.name = name;
 	}
 	
 	public Artist(Long id, String name) {

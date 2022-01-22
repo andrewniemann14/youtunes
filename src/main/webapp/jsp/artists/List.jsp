@@ -43,8 +43,8 @@
 						<td><%=artist.getID() %></td>
 						<td><%=artist.getName() %></td>
 						<td>
-							<a>Edit</a>
-							<a>Delete</a>
+							<a href="store?action=artistDetails&artistId=<%=artist.getID() %>">Edit</a>
+							<a href="store?action=deleteArtist&artistId=<%=artist.getID() %>">Delete</a>
 						</td>
 					</tr>
 				<% } %>
@@ -52,7 +52,7 @@
 	</table>
 	
 
-	<a>New artist</a>
+	<a href="store?action=newArtist">New artist</a>
 </div>
 
 <jsp:include page="../Footer.jsp" />
