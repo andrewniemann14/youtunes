@@ -1,3 +1,4 @@
+/* remove these since they don't work in eclipse */
 
 /* CUSTOM PROPS */
 :root {
@@ -14,9 +15,10 @@
   --bs-hover-text: 1px 1px .15em rgba(0, 0, 0, 0.25);
 
 
-  --clr-pri: rgb(208, 231, 255);
-  --clr-sec: rgb(133, 155, 177);
-  --clr-acc: rgb(25, 59, 94);
+  --clr-pri: rgb(255, 252, 244);
+  --clr-sec: rgb(255, 193, 151);
+  --clr-card: whitesmoke;
+  --clr-acc: rgb(93, 177, 180);
 
   --fc-light: rgb(240, 240, 240);
   --fc-dark: rgb(10, 10, 10);
@@ -55,7 +57,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: var(--fc-light);
+  color: var(--fc-dark);
 }
 
 .nav__link:hover {
@@ -84,13 +86,50 @@ body {
 }
 
 
+
+
+.album-list__section {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+	flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.album-list__item {
+  width: fit-content;
+  margin: 10px;
+  padding: 5px;
+  background: var(--clr-card);
+	box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+}
+
+.album-list__item--img {
+	height: 300px;
+	width: 300px;
+}
+
+.album-list__item--title {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.album-list__item--details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
 .artist-list__section {
   margin: 10px;
   width: calc(100%-20px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid blue;
 }
 
 .artist-list__item {
@@ -101,6 +140,7 @@ body {
   display: grid;
   grid-template-columns: 2em 1fr 4em;
   align-items: center;
+  background: var(--clr-card);
 	box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
 }
 
@@ -124,7 +164,3 @@ body {
 	background: var(--clr-pri);
 	opacity: .4;
 }
-
-
-
-

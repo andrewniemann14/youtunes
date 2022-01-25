@@ -10,8 +10,10 @@
 <body>
 <jsp:include page="TopNav.jsp" flush="true" />
 
+<div style="text-align: center;">
 	<h2>YouTunes Discover</h2>
 	<p>Your first stop for finding new music</p>
+</div>
 
 <jsp:include page="Footer.jsp" flush="true" />
 <jsp:include page="ScriptFooter.jsp" flush="true" />

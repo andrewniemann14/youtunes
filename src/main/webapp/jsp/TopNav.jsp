@@ -6,7 +6,7 @@
 
     <div class="nav__item">
       <a href="/youtunes" class="nav__link nav__link--home">
-        <span><img src="img/yt-logo-white.svg" class="nav__link--logo" /></span>
+        <span><img src="img/yt-logo.svg" class="nav__link--logo" /></span>
         <span>You<br/>Tunes</span>
       </a>
     </div>
