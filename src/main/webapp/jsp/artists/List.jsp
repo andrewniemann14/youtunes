@@ -11,45 +11,37 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 	<title>Artists</title>
 </head>
 <body>
 <jsp:include page="../TopNav.jsp" flush="true" />
 
 <div>
-	<h2>h2 Heading</h2>
+	<h2>Artists</h2>
 	
-	<table>
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Name</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%
-				List<Artist> artists = artistDao.list();
-				Iterator<Artist> iterator = artists.iterator();
-				while (iterator.hasNext()) {
-					Artist artist = (Artist)iterator.next();
+	<div class="artist-list__section">
+		<%
+		List<Artist> artists = artistDao.list();
+		Iterator<Artist> iterator = artists.iterator();
+		while (iterator.hasNext()) {
+			Artist artist = (Artist)iterator.next();
 					
-					// necessary?
-					System.out.println(artist.getID());
-					System.out.println(artist.getName());
-			%>
-					<tr>
-						<td><%=artist.getID() %></td>
-						<td><%=artist.getName() %></td>
-						<td>
-							<a href="store?action=artistDetails&artistId=<%=artist.getID() %>">Edit</a>
-							<a href="store?action=deleteArtist&artistId=<%=artist.getID() %>">Delete</a>
-						</td>
-					</tr>
-				<% } %>
-		</tbody>
-	</table>
+			System.out.println(artist.getID());
+			System.out.println(artist.getName());
+		%>
+			<div class="artist-list__item">
+				<span class="artist-list__item--id"><%=artist.getID() %></span>
+				<span class="artist-list__item--name"><%=artist.getName() %></span>
+				<span class="artist-list__item--actions">
+					<a href="store?action=artistDetails&artistId=<%=artist.getID() %>"
+						class="artist-list__item--link">Edit</a>
+					<a href="store?action=deleteArtist&artistId=<%=artist.getID() %>"
+						class="artist-list__item--link">Delete</a>
+				</span>
+			</div>
+		<% } %>
+	</div>
 	
 
 	<a href="store?action=newArtist">New artist</a>

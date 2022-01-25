@@ -101,17 +101,17 @@ public class YoutunesServlet extends HttpServlet
 	
 	private void updateArtist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		String name = request.getParameter("name");
+		String artistName = request.getParameter("artistName");
 		String artistId = request.getParameter("artistId"); 
 		
 		Artist artistToUpdate = new Artist(); 
 		artistToUpdate.setID(Long.parseLong(artistId));
-		artistToUpdate.setName(name);
+		artistToUpdate.setName(artistName);
 		
 		JdbcArtistDao artistDao = new JdbcArtistDao(); 
 		artistDao.update(artistToUpdate);
 		
-		System.out.println("ArtistId: " + artistId + "; Name: " + name);
+		System.out.println("ArtistId: " + artistId + "; Name: " + artistName);
 		System.out.println("Updated artist: " + artistId);
 	}
 	
@@ -127,12 +127,12 @@ public class YoutunesServlet extends HttpServlet
 	
 	private void createArtist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		String name = request.getParameter("name");
+		String artistName = request.getParameter("artistName");
 		
 		JdbcArtistDao artistDao = new JdbcArtistDao(); 
-		artistDao.add(new Artist(name));
+		artistDao.add(new Artist(artistName));
 		
-		System.out.println("Added artist: {name='" + name + "}");
+		System.out.println("Added artist: {name='" + artistName + "}");
 	}
 	
 	private void createAlbum(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
