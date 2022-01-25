@@ -32,7 +32,7 @@
 			Album album = (Album)iterator.next();
 			%>
 			<div class="album-list__item">
-				<img class="album-list__item--img" src="/youtunes/img/<%=album.getImgUrl() %>" />
+				<img class="album-list__item--img" src="img/<%=album.getImgUrl() %>" />
 				<div class="album-list__item--title"><%=album.getTitle() %></div>
 				<div class="album-list__item--details">
 					<span><%=album.getGenre() %></span>
