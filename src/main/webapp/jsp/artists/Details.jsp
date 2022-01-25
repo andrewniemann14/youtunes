@@ -16,7 +16,9 @@
 <jsp:include page="../TopNav.jsp" flush="true" />
 
 <div>
-	<h2>Artist Details</h2>
+	<div class="section__intro">
+		<h2>Artist Details</h2>
+	</div>
 	
 	<% 
 		try {
@@ -25,7 +27,7 @@
 			
 			if (artist != null) {
 			%>
-				<form>
+				<form class="form">
 					<input type="hidden" name="action" value="updateArtist" />
 					<input type="hidden" name="artistId" value="<%=artist.getID() %>" />
 					
@@ -34,7 +36,13 @@
 						<input type="text" id="artistName" name="artistName" value="<%=artist.getName() %>" />
 					</div>
 					
-					<button type="submit" >Save</button>
+					<button class="btn" type="submit" >Save</button>
+				</form>
+				<form id="artistForm">
+					<input type="hidden" name="action" value="deleteArtist" />
+					<input type="hidden" name="artistId" value="<%=artist.getID()%>" />
+					
+					<button class="btn btn--delete" id="btnSubmit" type="submit">Delete</button>
 				</form>
 				<%
 				System.out.println(artist.getName());
@@ -48,7 +56,7 @@
 	%>
 	<br />
 	<br />
-	<a href="store?action=showArtists">Return to artists</a>
+	<a class="link-back" href="store?action=showArtists">Return to artists</a>
 </div>
 
 <jsp:include page="../ScriptFooter.jsp" flush="true" />

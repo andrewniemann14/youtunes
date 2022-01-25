@@ -10,9 +10,9 @@
 <body>
 <jsp:include page="TopNav.jsp" flush="true" />
 
-<div style="text-align: center;">
+<div class="section__intro">
 	<h2>YouTunes Discover</h2>
-	<p>Your first stop for finding new music</p>
+	<p>Your first stop for finding new music. Or something like that.</p>
 </div>
 
 <jsp:include page="Footer.jsp" flush="true" />

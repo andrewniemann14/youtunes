@@ -17,8 +17,10 @@
 <jsp:include page="../TopNav.jsp" flush="true" />
 
 <div>
-	<h2>New Artist</h2>
-		<form>
+	<div class="section__intro">
+		<h2>New Artist</h2>
+	</div>
+		<form class="form">
 			<input type="hidden" name="action" value="createArtist" />
 					
 				<div>
@@ -26,11 +28,10 @@
 					<input type="text" id="artistName" name="artistName" />
 				</div>
 					
-				<button type="submit">Save</button>
+				<button class="btn" type="submit">Save</button>
 		</form>
-	<br />
-	<br />
-	<a href="store?action=showArtists">Return to artists</a>
+
+	<a class="link-back" href="store?action=showArtists">Return to artists</a>
 </div>
 <jsp:include page="../Footer.jsp" flush="true" />
 <jsp:include page="../ScriptFooter.jsp" flush="true" />

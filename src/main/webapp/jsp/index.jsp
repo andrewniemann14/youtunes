@@ -18,10 +18,10 @@
 	<jsp:include page="TopNav.jsp" />
 
 
-	<div class="landing__section">
-		<h1 class="landing__title">Welcome to YouTunes!</h1>
-		<h3 class="landing__subtitle">This is definitely a fully functional website!</h3>
-		<a>new album?</a>
+	<div class="section__intro">
+		<h1 class="section__title">Welcome to YouTunes!</h1>
+		<h3 class="section__subtitle">Definitely a fully functional website</h3>
+	<a href="store?action=newAlbum">New album</a>
 	</div>
 
 	<div class="album-list__section">
@@ -31,6 +31,7 @@
 		while (iterator.hasNext()) {
 			Album album = (Album)iterator.next();
 			%>
+			<a href="store?action=albumDetails&albumId=<%=album.getAlbumId()%>">
 			<div class="album-list__item">
 				<img class="album-list__item--img" src="img/<%=album.getImgUrl() %>" />
 				<div class="album-list__item--title"><%=album.getTitle() %></div>
@@ -39,14 +40,10 @@
 					<span>$<%=String.format("%.2f", album.getPrice()) %></span>
 				</div>
 			</div>
+			</a>
 		<% } %>
 	</div>
-
-
-
-
-
-
+	
 
 
 

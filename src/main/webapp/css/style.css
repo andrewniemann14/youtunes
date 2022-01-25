@@ -1,46 +1,28 @@
-/* remove these since they don't work in eclipse */
-
-/* CUSTOM PROPS */
-:root {
-  --fs-h1: 3rem;
-  --fs-h2: 2.25rem;
-  --fs-h3: 1.25rem;
-  --fs-body: 1rem;
 
 
-  --bs-old: 0.25em 0 0.75em rgba(0,0,0,0.25),
-        0.125em 0 0.25em rgba(0, 0, 0, 0.15);
-
-  --bs-hover: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
-  --bs-hover-text: 1px 1px .15em rgba(0, 0, 0, 0.25);
-
-
-  --clr-pri: rgb(255, 252, 244);
-  --clr-sec: rgb(255, 193, 151);
-  --clr-card: whitesmoke;
-  --clr-acc: rgb(93, 177, 180);
-
-  --fc-light: rgb(240, 240, 240);
-  --fc-dark: rgb(10, 10, 10);
-  
+html {
+  scroll-behavior: smooth;
 }
-
-
 
 body {
   margin: 0;
   padding: 0;
-  background: var(--clr-pri);
-  color: var(--fc-dark);
+  background: silver;
   font-family: sans-serif;
 }
 
+a {
+	color: black;
+}
+
 .nav__section {
+	margin: 0;
+	width: 100%;
 	height: 100px;
-	background: var(--clr-sec);
+	background: gray;
 	display: flex;
 	flex-direction: row;
-  font-size: var(--fs-h2);
+	font-size: 2em;
   box-shadow: 0 2px 5px rgba(0,0,0,0.25);
 }
 
@@ -53,23 +35,22 @@ body {
 
 .nav__link {
 	text-decoration: none;
+	color: whitesmoke;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: var(--fc-dark);
 }
 
 .nav__link:hover {
-  box-shadow: var(--bs-hover);
-  text-shadow: var(--bs-hover-text);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px .15em rgba(0, 0, 0, 0.25);
 }
 
 .nav__link--home {
   text-align: left;
   justify-content: left;
   line-height: normal;
-  color: var(--clr-acc);
 }
 
 .nav__link--logo {
@@ -79,13 +60,10 @@ body {
 }
 
 
-
-
-.landing__section {
+.section__intro {
 	text-align: center;
+	margin-bottom: 30px;
 }
-
-
 
 
 .album-list__section {
@@ -100,13 +78,15 @@ body {
   width: fit-content;
   margin: 10px;
   padding: 5px;
-  background: var(--clr-card);
-	box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+  background: whitesmoke;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+  border-radius: 10px;
 }
 
 .album-list__item--img {
 	height: 300px;
 	width: 300px;
+	border-radius: 5px 5px 0px 0px;
 }
 
 .album-list__item--title {
@@ -116,12 +96,67 @@ body {
   font-weight: bold;
 }
 
+.album-list__item--title::before {
+	content: '';
+	display: block;
+	width: 200px;
+	height: 1px;
+	background-color: black;
+	margin: 2px auto 5px;
+}
+
+
+.album-list__item--title::after {
+	content: '';
+	display: block;
+	width: 200px;
+	height: 1px;
+	background-color: black;
+	margin: 2px auto 5px;
+}
+
 .album-list__item--details {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
+
+.form {
+	width: 300px;
+	margin: 50px auto;
+	padding: 20px;
+	background: whitesmoke;
+	border-radius: 5px;
+	box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+}
+
+.form > div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form input, .form select {
+	background: floralwhite;
+	border: 1px solid black;
+	margin: 1px;
+}
+
+.btn {
+	display: block;
+	font-size: 1.5em;
+	margin: 10px auto;
+}
+
+.btn--delete {
+	margin: 10px auto;
+	background: red;
+}
+
+.link-back {
+	display: block;
+	text-align: center;
+}
 
 
 .artist-list__section {
@@ -130,18 +165,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 .artist-list__item {
   width: 400px;
-	min-height: 50px;
+  min-height: 50px;
   margin: 10px;
   padding: 5px;
   display: grid;
   grid-template-columns: 2em 1fr 4em;
   align-items: center;
-  background: var(--clr-card);
-	box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+  background: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
 }
 
 .artist-list__item--name {
@@ -153,14 +190,20 @@ body {
 }
 
 
-
 .footer {
-	width: 100vw;
+	width: 100%;
 	bottom: 0;
 	position: fixed;
-	text-align: right;
-	padding: 0;
 	margin: 0;
-	background: var(--clr-pri);
-	opacity: .4;
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__link-top {
+	margin-left: 20px;
+	font-size: 1.5em;
+}
+
+.footer__copyright {
+	margin-right: 20px;
 }

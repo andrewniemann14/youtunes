@@ -154,7 +154,6 @@ public class YoutunesServlet extends HttpServlet
 		albumDao.add(newAlbum);
 		
 		System.out.println(newAlbum.toString());
-		// System.out.println(String.format("Album{title=%s, price=%s, genre=%s, artistId=%s}", title, price, genre, artistId));
 	}
 	
 	private void updateAlbum(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 

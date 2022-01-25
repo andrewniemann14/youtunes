@@ -18,7 +18,10 @@
 <jsp:include page="../TopNav.jsp" flush="true" />
 
 <div>
-	<h2>Artists</h2>
+	<div class="section__intro">
+		<h2 style="text-align: center;">Artists</h2>
+		<a href="store?action=newArtist">New artist</a>
+	</div>
 	
 	<div class="artist-list__section">
 		<%
@@ -36,15 +39,14 @@
 				<span class="artist-list__item--actions">
 					<a href="store?action=artistDetails&artistId=<%=artist.getID() %>"
 						class="artist-list__item--link">Edit</a>
-					<a href="store?action=deleteArtist&artistId=<%=artist.getID() %>"
-						class="artist-list__item--link">Delete</a>
 				</span>
 			</div>
 		<% } %>
+		
 	</div>
 	
 
-	<a href="store?action=newArtist">New artist</a>
+	
 </div>
 
 <jsp:include page="../Footer.jsp" />

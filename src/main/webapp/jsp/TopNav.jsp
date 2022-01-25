@@ -2,7 +2,7 @@
 
 <%@page language="java" contentType="text/html"%>
 
-  <div class="nav__section"> <!-- this is flex-row -->
+  <div class="nav__section" id="top"> <!-- this is flex-row -->
 
     <div class="nav__item">
       <a href="/youtunes" class="nav__link nav__link--home">

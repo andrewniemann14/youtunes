@@ -10,13 +10,16 @@
 <body>
 <jsp:include page="TopNav.jsp" flush="true" />
 
-<div style="text-align: center;">
+<div class="section__intro">
 	<h2>Contact Us</h2>
-	<p>Our customer support stands ready to answer any inquiries</p>
+	<p>Our customer support stands ready to recycle any inquiries</p>
 	<p>They can be reached through the following methods:</p>
+	<div class="form">
+		<p>(402) 874-5819</p>
+		<p>support@youtunes.com</p>
+	</div>
 	<br />
-	<p>(402) 874-5819</p>
-	<p>support@youtunes.com</p>
+	<p>If support is needed after regular business hours, please dial 911.</p>
 </div>
 
 <jsp:include page="Footer.jsp" flush="true" />

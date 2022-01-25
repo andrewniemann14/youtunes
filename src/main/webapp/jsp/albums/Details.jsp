@@ -19,22 +19,14 @@
 
 
 
-<style>
-	#alert-genre-message {
-		display: none;
-	}
-	
-	#alert-artist-message {
-		display: none;
-	}
-</style>
-
 </head>
 <body>
 <jsp:include page="../TopNav.jsp" flush="true" />
 
 <div>
-
+	<div class="section__intro">
+		<h2 class="section__title">Album Details</h2>
+	</div>
 	<% 
 		try 
 		{
@@ -44,45 +36,45 @@
 			
 			if (album != null) {
 			%>
-				<form id="albumForm">
+				<form class="form album__form" id="albumForm">
 					<input type="hidden" name="action" value="updateAlbum" />
 					<input type="hidden" name="albumId" value="<%=album.getAlbumId()%>" />
 					
-					<div class="mb-3">
-						<label for="title" class="form-label">Album title</label>
-						<input type="text" class="form-control" id="title" name="title" value="<%=album.getTitle() %>" />
+					<div>
+						<label for="title">Album title</label>
+						<input type="text" id="title" name="title" value="<%=album.getTitle() %>" />
 					</div>
 					
-					<div class="mb-3">
-						<label for="price" class="form-label">Price</label>
-						<input type="text" class="form-control" id="price" name="price" value="<%=album.getPrice() %>" />
+					<div>
+						<label for="price" >Price</label>
+						<input type="text" id="price" name="price" value="<%=album.getPrice() %>" />
 					</div>
 					
-					<div class="mb-3">
-						<label for="url" class="form-label">Image URL</label>
-						<input type="text" class="form-control" id="img_url" name="img_url" value="<%=album.getImgUrl()%>" />
+					<div>
+						<label for="url" >Image URL</label>
+						<input type="text" id="img_url" name="img_url" value="<%=album.getImgUrl()%>" />
 					</div>
 		
-					<div class="mb-3">
-						<label for="genre" class="form-label">Genre</label>
-						<select class="form-select" id="genre" name="genre">
+					<div>
+						<label for="genre" >Genre</label>
+						<select id="genre" name="genre">
 							<option value="0">--Select--</option>
 							<% System.out.println("Selected Genre: " + album.getGenre()); %>
 							
+							<option value="Alternative" <% if (album.getGenre().equals("Alternative")) { %> selected <% } %> >Alternative</option>
 							<option value="Classical" <% if (album.getGenre().equals("Classical")) { %> selected <% } %> >Classical</option>
+							<option value="Hip-hop" <% if (album.getGenre().equals("Hip-hop")) { %> selected <% } %> >Hip-hop</option>
 							<option value="Jazz" <% if (album.getGenre().equals("Jazz")) { %> selected <% } %> >Jazz</option>
-							<option value="Blues" <% if (album.getGenre().equals("Blues")) { %> selected <% } %> >Blues</option>
+							<option value="Pop" <% if (album.getGenre().equals("Pop")) { %> selected <% } %> >Pop</option>
+							<option value="Rap" <% if (album.getGenre().equals("Rap")) { %> selected <% } %> >Rap</option>
+							<option value="R&B" <% if (album.getGenre().equals("R&B")) { %> selected <% } %> >R&B</option>
 							<option value="Rock" <% if (album.getGenre().equals("Rock")) { %> selected <% } %> >Rock</option>
 						</select>
 					</div>
 		
-					<div class="alert alert-danger" id="alert-genre-message" role="alert">
-			  			
-					</div>
-		
-					<div class="mb-3">
-						<label for="artist" class="form-label">Artist</label>
-						<select class="form-select" id="artist" name="artist">
+					<div>
+						<label for="artist" >Artist</label>
+						<select id="artist" name="artist">
 							<option value="0" selected>--Select--</option>
 							
 							<%
@@ -99,16 +91,18 @@
 								<% } %>
 						</select>
 					</div>
-		
-					<div id="alert-artist-message" role="alert">
-  			
-					</div>
 					
-					<button id="btnSubmit" type="submit" >Save</button>
+					<button class="btn btn--save" id="btnSubmit" type="submit" >Save</button>
+				</form>
+				<form id="albumForm">
+					<input type="hidden" name="action" value="deleteAlbum" />
+					<input type="hidden" name="albumId" value="<%=album.getAlbumId()%>" />
+					
+					<button class="btn btn--delete" id="btnSubmit" type="submit">Delete</button>
 				</form>
 				
 				<br /><br />
-				<a href="store?action=showAlbums">Return to Albums</a>
+				<a class="link-back" href="store?action=showAlbums">Return to Albums</a>
 			<% 	
 			}
 		}
@@ -120,46 +114,6 @@
 	%>
 </div>
 
-<script type="text/javascript">
-	// TODO: refactor this code into a function/javascript file.  The Details.jsp and index.jsp pages use the same code.
-	let albumForm = document.getElementById("albumForm");
-	
-	albumForm.onsubmit = function() {
-		let genre = document.getElementById('genre').value;
-		let artist = document.getElementById('artist').value;
-		let alertGenreDiv = document.getElementById('alert-genre-message'); 
-		let alertArtistDiv = document.getElementById('alert-artist-message');
-		
-		console.log('Genre: ' + genre);
-		console.log('Artist: ' + artist);
-		
-		if (genre.localeCompare('0') === 0) {	
-			showAlertBox(alertGenreDiv, 'Invalid genre selection.');
-			
-			return false;
-		} else if (artist.localeCompare('0') === 0) {
-			hideAlertBox(alertGenreDiv, ''); 
-			showAlertBox(alertArtistDiv, 'Invalid artist selection.');
-			
-			return false;
-		}
-		else {
-			hideAlertBox(alertGenreDiv, '');
-			hideAlertBox(alertArtistDiv, '');
-			albumForm.submit(); 
-		} 
-	}
-	
-	function hideAlertBox(div, msg) {
-		div.style.display = 'none';
-		div.innerHTML = msg;
-	}
-	
-	function showAlertBox(div, msg) {
-		div.style.display = 'block';
-		div.innerHTML = msg;
-	}
-</script>
 
 </body>
 </html>
